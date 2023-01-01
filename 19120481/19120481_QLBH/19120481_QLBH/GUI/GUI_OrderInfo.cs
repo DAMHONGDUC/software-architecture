@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace _19120481_QLBH.GUI
 {
-    public partial class Login : Form
+    public partial class GUI_OrderInfo : Form
     {
-        public Login()
+        public GUI_OrderInfo()
         {
             InitializeComponent();
         }

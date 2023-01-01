@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
-namespace DAO
+namespace _19120481_QLBH.DAO
 {
-    public class DatabaseAccess
+    class DBAccess
     {
         // tên server của SQL server
-        private static string server_name = @"(LocalDB)\MSSQLLocalDB";
+        private static string exactly_server_name = @"(LocalDB)\MSSQLLocalDB";
 
         //Khai báo đối tượng kết nối  
         public static SqlConnection Con;
@@ -43,13 +44,14 @@ namespace DAO
             }
         }
 
-        public static DataTable GetDataToTable(string sql) //Lấy dữ liệu đổ vào bảng
+        // Lấy dữ liệu đổ vào bảng
+        public static DataTable GetDataToTable(string sql) 
         {
             SqlDataAdapter dap = new SqlDataAdapter();
             dap.SelectCommand = new SqlCommand();
 
             //Kết nối cơ sở dữ liệu
-            dap.SelectCommand.Connection = DatabaseAccess.Con;
+            dap.SelectCommand.Connection = DBAccess.Con;
             dap.SelectCommand.CommandText = sql;
 
             DataTable table = new DataTable();
@@ -57,7 +59,8 @@ namespace DAO
             return table;
         }
 
-        public static bool CheckKey(string sql) // kiểm tra xem có trùng khóa hay không
+        // kiểm tra xem có trùng khóa hay không
+        public static bool CheckKey(string sql) 
         {
             SqlDataAdapter dap = new SqlDataAdapter(sql, Con);
             DataTable table = new DataTable();
@@ -67,7 +70,8 @@ namespace DAO
             else return false;
         }
 
-        public static void RunSQL(string sql) // chạy câu lệnh sql
+        // chạy câu lệnh sql
+        public static void RunSQL(string sql) 
         {
             SqlCommand cmd = new SqlCommand();
 
@@ -91,7 +95,9 @@ namespace DAO
             cmd.Dispose();
             cmd = null;
         }
-        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten) // đổ dữ liệu vào comboBox
+
+        // đổ dữ liệu vào comboBox
+        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten) 
         {
             SqlDataAdapter dap = new SqlDataAdapter(sql, Con);
             DataTable table = new DataTable();
@@ -101,7 +107,8 @@ namespace DAO
             cbo.DisplayMember = ten;
         }
 
-        public static string GetFieldValues(string sql) // lấy dữ liệu từ câu lệnh sql
+        // lấy dữ liệu từ câu lệnh sql
+        public static string GetFieldValues(string sql) 
         {
             string ma = "";
             SqlCommand cmd = new SqlCommand(sql, Con);
