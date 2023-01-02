@@ -2,30 +2,40 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.Sql;
 
 namespace _19120481_QLBH.DAO
 {
     class DBAccess
     {
-        // tên server của SQL server
-        private static string exactly_server_name = @"(LocalDB)\MSSQLLocalDB";
+        // tên server của SQL server, chạy câu lệnh "SELECT @@SERVERNAME" trong sql server để lấy
+        private static string server_name = @"DESKTOP-2V6T4K0\SQLEXPRESS";
 
         //Khai báo đối tượng kết nối  
         public static SqlConnection Con;
-        public static void Connect(string ConnectString)
+        public static bool Connect()
         {
             Con = new SqlConnection();
-            Con.ConnectionString = ConnectString;
-            //  Con.ConnectionString = "Data Source=DESKTOP-0QKBNDR;Initial Catalog=HYT;Integrated Security=True";
+            Con.ConnectionString = "Data Source=" + DBAccess.server_name + ";Initial Catalog=QLBH;Integrated Security=True";
             //Mở kết nối
-            Con.Open();
 
-            //Kiểm tra kết nối
-            if (Con.State == ConnectionState.Open)
+            try
             {
-                //MessageBox.Show("Kết nối DB thành công");
+                Con.Open();
+
+                //Kiểm tra kết nối
+                if (Con.State == ConnectionState.Open)
+                {
+                    return true;
+                }             
             }
-            else MessageBox.Show("Không thể kết nối với DB");
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return false;
         }
 
         public static void Disconnect()

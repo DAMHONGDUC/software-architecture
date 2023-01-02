@@ -16,7 +16,7 @@ namespace _19120481_QLBH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new _19120481_QLBH.GUI.GUI_Product());
+            Application.Run(new _19120481_QLBH.GUI.GUI_SignIn());
         }
     }
 }

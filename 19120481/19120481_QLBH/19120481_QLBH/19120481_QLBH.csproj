@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BUS_Product.cs" />
-    <Compile Include="DAO\DAO_SignIn.cs" />
+    <Compile Include="BUS\BUS_User.cs" />
+    <Compile Include="DAO\DAO_User.cs" />
     <Compile Include="DAO\DBAccess.cs" />
     <Compile Include="DTO\DTO_Product.cs" />
+    <Compile Include="DTO\DTO_User.cs" />
     <Compile Include="GUI\GUI_Main_Admin.cs">
       <SubType>Form</SubType>
     </Compile>

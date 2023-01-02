@@ -29,7 +29,6 @@ namespace _19120481_QLBH.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_dangki = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,20 +36,6 @@ namespace _19120481_QLBH.GUI
             this.txtBox_matkhau = new System.Windows.Forms.TextBox();
             this.txtBox_tendangnhap = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // btn_dangki
-            // 
-            this.btn_dangki.BackColor = System.Drawing.Color.Crimson;
-            this.btn_dangki.FlatAppearance.BorderSize = 0;
-            this.btn_dangki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dangki.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_dangki.ForeColor = System.Drawing.Color.White;
-            this.btn_dangki.Location = new System.Drawing.Point(280, 400);
-            this.btn_dangki.Name = "btn_dangki";
-            this.btn_dangki.Size = new System.Drawing.Size(135, 44);
-            this.btn_dangki.TabIndex = 20;
-            this.btn_dangki.Text = "Đăng Kí";
-            this.btn_dangki.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -94,12 +79,13 @@ namespace _19120481_QLBH.GUI
             this.btn_dangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_dangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_dangnhap.ForeColor = System.Drawing.Color.White;
-            this.btn_dangnhap.Location = new System.Drawing.Point(38, 400);
+            this.btn_dangnhap.Location = new System.Drawing.Point(164, 402);
             this.btn_dangnhap.Name = "btn_dangnhap";
             this.btn_dangnhap.Size = new System.Drawing.Size(135, 44);
             this.btn_dangnhap.TabIndex = 16;
             this.btn_dangnhap.Text = "Đăng Nhập";
             this.btn_dangnhap.UseVisualStyleBackColor = false;
+            this.btn_dangnhap.Click += new System.EventHandler(this.btn_dangnhap_Click);
             // 
             // txtBox_matkhau
             // 
@@ -120,29 +106,27 @@ namespace _19120481_QLBH.GUI
             this.txtBox_tendangnhap.Size = new System.Drawing.Size(377, 40);
             this.txtBox_tendangnhap.TabIndex = 14;
             // 
-            // DangNhap
+            // GUI_SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 495);
-            this.Controls.Add(this.btn_dangki);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_dangnhap);
             this.Controls.Add(this.txtBox_matkhau);
             this.Controls.Add(this.txtBox_tendangnhap);
-            this.Name = "DangNhap";
+            this.Name = "GUI_SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangNhap";
+            this.Load += new System.EventHandler(this.GUI_SignIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_dangki;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
