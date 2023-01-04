@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BUS\BUS_Product.cs" />
     <Compile Include="BUS\BUS_User.cs" />
+    <Compile Include="DAO\DAO_Product.cs" />
     <Compile Include="DAO\DAO_User.cs" />
     <Compile Include="DAO\DBAccess.cs" />
     <Compile Include="DTO\DTO_Product.cs" />

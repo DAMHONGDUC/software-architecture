@@ -24,11 +24,11 @@ GO
 
 INSERT INTO M_PRODUCT
 VALUES
-	(N'Hoa hồng', N'hoa hồng', 'https://www.pinterest.com/pin/756956649877065867/',10,60000),
-	(N'Hoa hướng dương', N'hoa hướng dương', 'https://www.pinterest.com/pin/68742994984/',10,70000),
-	(N'Hoa tuylip', N'hoa tulip', 'https://www.pinterest.com/pin/443393525823105628/', 10,80000),
-	(N'Hoa ly', N'hoa ly', 'https://www.pinterest.com/pin/422281206039061/', 10, 50000),
-	(N'Hoa cẩm tú cầu', N'hoa cẩm tú cầu', 'https://www.pinterest.com/pin/351912445419073/', 10, 90000)
+	(N'Hoa hồng', N'hoa hồng biu-ti-fun', 'https://irisflorist.vn/wp-content/uploads/2020/06/96363260_704422107046604_3251986796573097984_n-scaled.jpg',10,60000),
+	(N'Hoa hướng dương', N'hoa hướng dương biu-ti-fun', 'https://hoatuoihoamy.com/wp-content/uploads/2020/09/bo-hoa-dep-tang-sinh-nhat.jpg',10,70000),
+	(N'Hoa tuylip', N'hoa tulip biu-ti-fun', 'https://irisflorist.vn/wp-content/uploads/2021/06/20210518_112505-scaled.jpg', 10,80000),
+	(N'Hoa ly', N'hoa ly biu-ti-fun', 'https://iweb.tatthanh.com.vn/pic/3207/product/images/bo-hoa-baby-size-m.jpg', 10, 50000),
+	(N'Hoa cẩm tú cầu', N'hoa cẩm tú cầu biu-ti-fun', 'https://hoathuongyeu.com.vn/files/sanpham/288/1/jpg/bo-hoa-hong-kem-thanh-khiet-23-bong-no-hong-va-bi-trang.jpg', 10, 90000)
 GO
 
 --NOTE

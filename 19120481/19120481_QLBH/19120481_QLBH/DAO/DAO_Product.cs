@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _19120481_QLBH.DAO;
-using _19120481_QLBH.DTO;
 using System.Data;
 
-namespace _19120481_QLBH.BUS
+namespace _19120481_QLBH.DAO
 {
-    class BUS_Product
+    class DAO_Product
     {
-        DAO_Product daoProduct = new DAO_Product();
+        public DAO_Product()
+        {
+        }
 
         public DataTable getAllProduct()
         {
-            return daoProduct.getAllProduct();
+            return DBAccess.GetDataToTable("SELECT * FROM M_PRODUCT");
         }
 
         public DataTable searchByName(string name)
         {
-            return daoProduct.searchByName(name);
+            return DBAccess.GetDataToTable("SELECT * FROM M_PRODUCT WHERE NAME LIKE N'%" + name + "%'");
         }
-    }
+    } 
 }

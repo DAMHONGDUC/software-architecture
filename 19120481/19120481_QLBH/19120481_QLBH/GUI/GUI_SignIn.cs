@@ -21,6 +21,8 @@ namespace _19120481_QLBH.GUI
         public GUI_SignIn()
         {
             InitializeComponent();
+
+            busUser = new BUS_User();
         }
 
         private void GUI_SignIn_Load(object sender, EventArgs e)
@@ -29,8 +31,7 @@ namespace _19120481_QLBH.GUI
         }
 
         private void ConectDb()
-        {
-            busUser = new BUS_User();
+        {           
             bool state = busUser.ConnectDB();
 
             if (!state)
@@ -46,12 +47,12 @@ namespace _19120481_QLBH.GUI
             {
                 case 0:
                     {
-                        Application.Run(new GUI_Main_Admin());
+                        Application.Run(new GUI_Main_Admin(dtoUser));
                         break;
                     }
                 case 1:
                     {
-                        Application.Run(new GUI_Main_Staff());
+                        Application.Run(new GUI_Main_Staff(dtoUser));
                         break;
                     }
             }
@@ -83,8 +84,6 @@ namespace _19120481_QLBH.GUI
                 MessageBox.Show("Tên đăng nhập/mật khẩu sai !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-
         }
     }
 }

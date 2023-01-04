@@ -31,6 +31,7 @@ namespace _19120481_QLBH.GUI
         {
             this.panelChildForm_KH = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_dangxuat_KH = new System.Windows.Forms.Button();
             this.btn_thoat_KH = new System.Windows.Forms.Button();
             this.btn_themdh_NV = new System.Windows.Forms.Button();
@@ -38,7 +39,7 @@ namespace _19120481_QLBH.GUI
             this.lb_tendoitac_DT = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.labelName = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +67,20 @@ namespace _19120481_QLBH.GUI
             this.panelMenu.Size = new System.Drawing.Size(150, 840);
             this.panelMenu.TabIndex = 10;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(0, 276);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 60);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Đơn hàng đã tạo";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // btn_dangxuat_KH
             // 
             this.btn_dangxuat_KH.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -79,6 +94,7 @@ namespace _19120481_QLBH.GUI
             this.btn_dangxuat_KH.TabIndex = 9;
             this.btn_dangxuat_KH.Text = "Đăng xuất";
             this.btn_dangxuat_KH.UseVisualStyleBackColor = true;
+            this.btn_dangxuat_KH.Click += new System.EventHandler(this.btn_dangxuat_KH_Click_1);
             // 
             // btn_thoat_KH
             // 
@@ -93,6 +109,7 @@ namespace _19120481_QLBH.GUI
             this.btn_thoat_KH.TabIndex = 6;
             this.btn_thoat_KH.Text = "Thoát";
             this.btn_thoat_KH.UseVisualStyleBackColor = true;
+            this.btn_thoat_KH.Click += new System.EventHandler(this.btn_thoat_KH_Click_1);
             // 
             // btn_themdh_NV
             // 
@@ -101,23 +118,25 @@ namespace _19120481_QLBH.GUI
             this.btn_themdh_NV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_themdh_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_themdh_NV.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_themdh_NV.Location = new System.Drawing.Point(0, 176);
+            this.btn_themdh_NV.Location = new System.Drawing.Point(0, 216);
             this.btn_themdh_NV.Name = "btn_themdh_NV";
             this.btn_themdh_NV.Size = new System.Drawing.Size(150, 60);
             this.btn_themdh_NV.TabIndex = 1;
             this.btn_themdh_NV.Text = "Sản phẩm";
             this.btn_themdh_NV.UseVisualStyleBackColor = true;
+            this.btn_themdh_NV.Click += new System.EventHandler(this.btn_themdh_NV_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panel2.Controls.Add(this.labelName);
             this.panel2.Controls.Add(this.lb_tendoitac_DT);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 176);
+            this.panel2.Size = new System.Drawing.Size(150, 216);
             this.panel2.TabIndex = 1;
             // 
             // lb_tendoitac_DT
@@ -136,7 +155,7 @@ namespace _19120481_QLBH.GUI
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 174);
+            this.panel1.Location = new System.Drawing.Point(0, 214);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 2);
             this.panel1.TabIndex = 0;
@@ -151,19 +170,19 @@ namespace _19120481_QLBH.GUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // labelName
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(0, 236);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 60);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Đơn hàng đã tạo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelName.Location = new System.Drawing.Point(8, 169);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(134, 24);
+            this.labelName.TabIndex = 3;
+            this.labelName.Text = "Nguyễn Văn A";
             // 
             // GUI_Main_Staff
             // 
@@ -195,5 +214,6 @@ namespace _19120481_QLBH.GUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelName;
     }
 }
