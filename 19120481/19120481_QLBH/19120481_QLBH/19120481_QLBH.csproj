@@ -46,11 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUS_Customer.cs" />
+    <Compile Include="BUS\BUS_Order.cs" />
     <Compile Include="BUS\BUS_Product.cs" />
     <Compile Include="BUS\BUS_User.cs" />
+    <Compile Include="DAO\DAO_Customer.cs" />
+    <Compile Include="DAO\DAO_Order.cs" />
     <Compile Include="DAO\DAO_Product.cs" />
     <Compile Include="DAO\DAO_User.cs" />
     <Compile Include="DAO\DBAccess.cs" />
+    <Compile Include="DTO\DTO_Customer.cs" />
+    <Compile Include="DTO\DTO_Order.cs" />
+    <Compile Include="DTO\DTO_OrderDetail.cs" />
     <Compile Include="DTO\DTO_Product.cs" />
     <Compile Include="DTO\DTO_User.cs" />
     <Compile Include="GUI\GUI_Main_Admin.cs">
@@ -58,6 +65,12 @@
     </Compile>
     <Compile Include="GUI\GUI_Main_Admin.Designer.cs">
       <DependentUpon>GUI_Main_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_MyOrder_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_MyOrder_Staff.Designer.cs">
+      <DependentUpon>GUI_MyOrder_Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GUI_OrderInfo.cs">
       <SubType>Form</SubType>
@@ -93,6 +106,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\GUI_Main_Admin.resx">
       <DependentUpon>GUI_Main_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_MyOrder_Staff.resx">
+      <DependentUpon>GUI_MyOrder_Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_OrderInfo.resx">
       <DependentUpon>GUI_OrderInfo.cs</DependentUpon>

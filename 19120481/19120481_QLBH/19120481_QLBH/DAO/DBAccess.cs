@@ -106,6 +106,11 @@ namespace _19120481_QLBH.DAO
             cmd = null;
         }
 
+        public static int getIDInserted()
+        {
+            return Int32.Parse(DBAccess.GetFieldValues("SELECT SCOPE_IDENTITY()"));
+        }
+
         // đổ dữ liệu vào comboBox
         public static void FillCombo(string sql, ComboBox cbo, string ma, string ten) 
         {

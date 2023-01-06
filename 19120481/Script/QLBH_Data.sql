@@ -38,9 +38,9 @@ GO
 --1 = PAYMENT_TYPE banking
 INSERT INTO M_ORDER
 VALUES
-	(1, 1, N'21/2 Trần Phú, Phường 3, Quận 3, TP.HCM', '10/01/2023', 'Nguyễn Thị A', '0355211736', '01/01/2023', 1, 1, 20000, 220000),
-	(2, 2, N'2 Nguyễn Văn Cừ, Phường 9, Quận 12, TP.HCM', '11/01/2023', 'Nguyễn Thị B', '0355211737', '02/01/2023', 1, 0, 20000, 240000),
-	(3, 3, N'1 Trương Công Định, Phường Linh Trung, TP. Thủ Đức, TP.HCM', '12/01/2023', 'Nguyễn Thị C', '0355211738', '03/01/2023', 1, 0, 20000, 250000)
+	(1, 2, N'21/2 Trần Phú, Phường 3, Quận 3, TP.HCM', '10/01/2023', N'Nguyễn Thị A', '0355211736', '01/01/2023', 1, 1, 20000, 220000),
+	(2, 3, N'2 Nguyễn Văn Cừ, Phường 9, Quận 12, TP.HCM', '11/01/2023', N'Nguyễn Thị B', '0355211737', '02/01/2023', 1, 0, 20000, 240000),
+	(3, 4, N'1 Trương Công Định, Phường Linh Trung, TP. Thủ Đức, TP.HCM', '12/01/2023', N'Nguyễn Thị C', '0355211738', '03/01/2023', 1, 0, 20000, 250000)
 GO
 
 INSERT INTO M_ORDER_DETAIL

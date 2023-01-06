@@ -23,9 +23,11 @@ namespace _19120481_QLBH.GUI
             this.dtoUser = user;
         }
 
-        private void GUI_Main_Admin_Load(object sender, EventArgs e)
+        private void GUI_Main_Staff_Load(object sender, EventArgs e)
         {
             labelName.Text = dtoUser.fullname;
+
+            btn_themdh_NV.PerformClick();
         }
 
         // mở 1 form con
@@ -95,6 +97,12 @@ namespace _19120481_QLBH.GUI
         {
             openChildForm(new GUI_Product(dtoUser));
             ActivateButton(sender);
-        }      
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new GUI_MyOrder_Staff(dtoUser));
+            ActivateButton(sender);
+        }
     }
 }

@@ -36,10 +36,10 @@ namespace _19120481_QLBH.GUI
             this.btn_thoat_KH = new System.Windows.Forms.Button();
             this.btn_themdh_NV = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelName = new System.Windows.Forms.Label();
             this.lb_tendoitac_DT = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelName = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +80,7 @@ namespace _19120481_QLBH.GUI
             this.button1.TabIndex = 10;
             this.button1.Text = "Đơn hàng đã tạo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_dangxuat_KH
             // 
@@ -139,6 +140,20 @@ namespace _19120481_QLBH.GUI
             this.panel2.Size = new System.Drawing.Size(150, 216);
             this.panel2.TabIndex = 1;
             // 
+            // labelName
+            // 
+            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelName.Location = new System.Drawing.Point(8, 169);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(134, 24);
+            this.labelName.TabIndex = 3;
+            this.labelName.Text = "Nguyễn Văn A";
+            // 
             // lb_tendoitac_DT
             // 
             this.lb_tendoitac_DT.AutoSize = true;
@@ -170,20 +185,6 @@ namespace _19120481_QLBH.GUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // labelName
-            // 
-            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelName.Location = new System.Drawing.Point(8, 169);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(134, 24);
-            this.labelName.TabIndex = 3;
-            this.labelName.Text = "Nguyễn Văn A";
-            // 
             // GUI_Main_Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -194,6 +195,7 @@ namespace _19120481_QLBH.GUI
             this.Name = "GUI_Main_Staff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GUI_Main_Staff";
+            this.Load += new System.EventHandler(this.GUI_Main_Staff_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

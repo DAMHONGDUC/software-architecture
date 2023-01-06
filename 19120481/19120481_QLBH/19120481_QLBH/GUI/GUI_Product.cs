@@ -16,8 +16,9 @@ namespace _19120481_QLBH.GUI
     public partial class GUI_Product : Form
     {
         BUS_Product busProduct;
-        DataTable tbl_QT_SP;
+        DataTable tbl_SP;
         DTO_User dtoUser;
+        DTO_Product dtoProduct;
 
         public GUI_Product(DTO_User user)
         {
@@ -28,8 +29,7 @@ namespace _19120481_QLBH.GUI
         }
 
         private void LoadDataDGV(DataTable tbl)
-        {
-            
+        {            
             dGV_QT_SP.DataSource = tbl;
 
             // set Font cho tên cột
@@ -58,7 +58,17 @@ namespace _19120481_QLBH.GUI
             dGV_QT_SP.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
-        private void disableBottomOption()
+        private void resetValue()
+        {
+            textBox_QT_SP_MASP.Text = "";
+            txtBox_QT_SP_TenSP.Text = "";
+            textBox_QT_SP_MoTa.Text = "";
+            txtBox_QT_SP_SL.Text = "";
+            txtBox_QT_SP_GiaGoc.Text = "";
+            textBox_HinhAnh.Text = "";
+        }
+
+        private void disableOption()
         {
             if (dtoUser.role != 0)
             {
@@ -66,6 +76,7 @@ namespace _19120481_QLBH.GUI
                 button_LuuSP.Visible = false;
                 button_QT_XoaSP.Visible = false;
                 button_QT_CapNhatSP.Visible = false;
+                btn_themdh.Enabled = false;
             }
             else
             {
@@ -75,20 +86,29 @@ namespace _19120481_QLBH.GUI
 
         private void GUI_Product_Load(object sender, EventArgs e)
         {
-            tbl_QT_SP = busProduct.getAllProduct();
+            tbl_SP = busProduct.getAllProduct();
 
-            LoadDataDGV(tbl_QT_SP);
+            LoadDataDGV(tbl_SP);
 
-            disableBottomOption();
+            disableOption();
         }
 
         private void dGV_QT_SP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (tbl_QT_SP.Rows.Count == 0)
+            if (tbl_SP.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            btn_themdh.Enabled = true;
+            dtoProduct = new DTO_Product(
+                Int32.Parse(dGV_QT_SP.CurrentRow.Cells["ID"].Value.ToString()),
+                dGV_QT_SP.CurrentRow.Cells["NAME"].Value.ToString(),
+                dGV_QT_SP.CurrentRow.Cells["DESCRIPTION"].Value.ToString(),
+                Int32.Parse(dGV_QT_SP.CurrentRow.Cells["QUANTITY"].Value.ToString()),
+                float.Parse(dGV_QT_SP.CurrentRow.Cells["PRICE"].Value.ToString()),
+                dGV_QT_SP.CurrentRow.Cells["IMAGE"].Value.ToString());
 
             // set giá trị cho các mục 
             textBox_QT_SP_MASP.Text = dGV_QT_SP.CurrentRow.Cells["ID"].Value.ToString();
@@ -111,16 +131,25 @@ namespace _19120481_QLBH.GUI
 
         private void btn_themdh_Click(object sender, EventArgs e)
         {
+            GUI_CreateOrder_Staff gui_CreateOrder_Staff = new GUI_CreateOrder_Staff(dtoProduct, dtoUser);
+            gui_CreateOrder_Staff.Show();
+            gui_CreateOrder_Staff.FormClosed += new FormClosedEventHandler(Form_Closed);
+        }
 
+        void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            tbl_SP = busProduct.getAllProduct();
+            LoadDataDGV(tbl_SP);
+            resetValue();
         }
 
         private void textBox_tensp_search_TextChanged(object sender, EventArgs e)
         {
             string name = textBox_tensp_search.Text.Trim();
 
-            tbl_QT_SP = busProduct.searchByName(name);
+            tbl_SP = busProduct.searchByName(name);
 
-            LoadDataDGV(tbl_QT_SP);
+            LoadDataDGV(tbl_SP);
         }
     }
 }
