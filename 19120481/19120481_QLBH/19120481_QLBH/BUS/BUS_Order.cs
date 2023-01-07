@@ -32,5 +32,10 @@ namespace _19120481_QLBH.BUS
         {
             return daoOrder.getOrderByStaffId(staffId);
         }
+
+        public DataTable getAllOrder()
+        {
+            return daoOrder.getAllOrder();
+        }
     }
 }

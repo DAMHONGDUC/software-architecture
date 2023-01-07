@@ -101,7 +101,7 @@ namespace _19120481_QLBH.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openChildForm(new GUI_MyOrder_Staff(dtoUser));
+            openChildForm(new GUI_Order(dtoUser));
             ActivateButton(sender);
         }
     }

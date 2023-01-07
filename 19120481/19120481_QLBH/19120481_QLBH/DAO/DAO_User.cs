@@ -37,5 +37,37 @@ namespace _19120481_QLBH.DAO
 
             return null;
         }
+
+        public DataTable getAllStaff()
+        {
+            return DBAccess.GetDataToTable("select * from M_USER");
+        }
+
+        public int insertUser(DTO_User user)
+        {
+            string sql = "INSERT INTO M_USER VALUES (" +
+                "'"+ user.username +"', " +
+                "'" + user.password + "', " +
+                "N'" + user.fullname + "', " +
+                "'" + user.dob + "', " +
+                "" + user.role + ")";
+
+            DBAccess.RunSQL(sql);
+
+            return DBAccess.getIDInserted();
+        }
+
+        public void updateUser(DTO_User user)
+        {
+            string sql = "update M_USER set " +
+                "USERNAME = '" + user.username + "', " +
+                "PASSWORD = '" + user.password + "', " +
+                "FULLNAME = N'" + user.fullname + "', " +
+                "DOB = '" + user.dob + "', " +
+                "ROLE = '" + user.role + "' " +
+                "where ID = " + user.id + "";
+
+            DBAccess.RunSQL(sql);
+        }
     }
 }

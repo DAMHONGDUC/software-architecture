@@ -55,5 +55,12 @@ namespace _19120481_QLBH.DAO
 
             return DBAccess.GetDataToTable(sql);
         }
+
+        public DataTable getAllOrder()
+        {
+            string sql = "select * from M_ORDER";
+
+            return DBAccess.GetDataToTable(sql);
+        }
     }
 }

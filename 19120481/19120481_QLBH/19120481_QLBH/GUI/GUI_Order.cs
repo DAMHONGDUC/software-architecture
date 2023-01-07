@@ -12,13 +12,13 @@ using _19120481_QLBH.DTO;
 
 namespace _19120481_QLBH.GUI
 {
-    public partial class GUI_MyOrder_Staff : Form
+    public partial class GUI_Order : Form
     {
         DataTable tbl_myOrder;
         BUS_Order busOrder;
         DTO_User dtoUser;
 
-        public GUI_MyOrder_Staff(DTO_User user)
+        public GUI_Order(DTO_User user)
         {
             InitializeComponent();
 
@@ -70,8 +70,15 @@ namespace _19120481_QLBH.GUI
 
         private void GUI_MyOrder_Staff_Load(object sender, EventArgs e)
         {
-
-            tbl_myOrder = busOrder.getOrderByStaffId(this.dtoUser.id);
+            if (dtoUser.role == 0)
+            {
+                tbl_myOrder = busOrder.getAllOrder();
+                label_order_title.Text = "TẤT CẢ ĐƠN HÀNG";
+            }
+            else
+            {
+                tbl_myOrder = busOrder.getOrderByStaffId(this.dtoUser.id);
+            }         
 
             LoadDataDGV(tbl_myOrder);
         }

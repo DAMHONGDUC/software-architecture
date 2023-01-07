@@ -1,7 +1,7 @@
 ﻿
 namespace _19120481_QLBH.GUI
 {
-    partial class GUI_MyOrder_Staff
+    partial class GUI_Order
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace _19120481_QLBH.GUI
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.txtBox_tennguoinhan = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_order_title = new System.Windows.Forms.Label();
             this.dGV_myOrder = new System.Windows.Forms.DataGridView();
             this.txt_diachinguoinhan = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -116,16 +116,16 @@ namespace _19120481_QLBH.GUI
             this.txtBox_tennguoinhan.Size = new System.Drawing.Size(192, 30);
             this.txtBox_tennguoinhan.TabIndex = 13;
             // 
-            // label1
+            // label_order_title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(507, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ĐƠN HÀNG ĐÃ TẠO";
+            this.label_order_title.AutoSize = true;
+            this.label_order_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_order_title.ForeColor = System.Drawing.Color.Red;
+            this.label_order_title.Location = new System.Drawing.Point(507, 12);
+            this.label_order_title.Name = "label_order_title";
+            this.label_order_title.Size = new System.Drawing.Size(276, 32);
+            this.label_order_title.TabIndex = 0;
+            this.label_order_title.Text = "ĐƠN HÀNG ĐÃ TẠO";
             // 
             // dGV_myOrder
             // 
@@ -202,7 +202,7 @@ namespace _19120481_QLBH.GUI
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtBox_tennguoinhan);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label_order_title);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -346,7 +346,7 @@ namespace _19120481_QLBH.GUI
             this.label7.TabIndex = 98;
             this.label7.Text = "SDT người nhận";
             // 
-            // GUI_MyOrder_Staff
+            // GUI_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -354,9 +354,9 @@ namespace _19120481_QLBH.GUI
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dGV_myOrder);
             this.Controls.Add(this.panel1);
-            this.Name = "GUI_MyOrder_Staff";
+            this.Name = "GUI_Order";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GUI_MyOrder_Staff";
+            this.Text = "GUI_Order";
             this.Load += new System.EventHandler(this.GUI_MyOrder_Staff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_myOrder)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -373,7 +373,7 @@ namespace _19120481_QLBH.GUI
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBox_tennguoinhan;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_order_title;
         private System.Windows.Forms.DataGridView dGV_myOrder;
         private System.Windows.Forms.TextBox txt_diachinguoinhan;
         private System.Windows.Forms.Label label8;

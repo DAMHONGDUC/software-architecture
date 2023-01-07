@@ -98,12 +98,14 @@ namespace _19120481_QLBH.GUI
 
         private void btn_NV_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new GUI_AllUser());
+            ActivateButton(sender);
         }
 
         private void btn_DH_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new GUI_Order(dtoUser));
+            ActivateButton(sender);
         }
     }
 }

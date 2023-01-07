@@ -12,6 +12,34 @@ namespace _19120481_QLBH.DTO
         private string _fullname;
         private DateTime _dob;
         private int _role;
+        private string _username;
+        private string _password;
+
+        public string password
+        {
+            get
+            {
+                return _password;
+            }
+
+            set
+            {
+                _password = value;
+            }
+        }
+
+        public string username
+        {
+            get
+            {
+                return _username;
+            }
+
+            set
+            {
+                _username = value;
+            }
+        }
 
         public int id
         {
@@ -73,6 +101,25 @@ namespace _19120481_QLBH.DTO
             this.fullname = fullname;
             this.dob = dob;
             this.role = role;
+        }
+
+        public DTO_User(string fullname, DateTime dob, int role, string username, string password)
+        {
+            _fullname = fullname;
+            _dob = dob;
+            _role = role;
+            _username = username;
+            _password = password;
+        }
+
+        public DTO_User(int id, string fullname, DateTime dob, int role, string username, string password)
+        {
+            _id = id;
+            _fullname = fullname;
+            _dob = dob;
+            _role = role;
+            _username = username;
+            _password = password;
         }
     }
 }

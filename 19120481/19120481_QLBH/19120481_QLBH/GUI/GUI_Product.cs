@@ -70,17 +70,17 @@ namespace _19120481_QLBH.GUI
 
         private void disableOption()
         {
-            if (dtoUser.role != 0)
+            if (dtoUser.role == 0)
+            {
+                btn_themdh.Visible = false;              
+            }
+            else
             {
                 button_ThemSP.Visible = false;
                 button_LuuSP.Visible = false;
                 button_QT_XoaSP.Visible = false;
                 button_QT_CapNhatSP.Visible = false;
                 btn_themdh.Enabled = false;
-            }
-            else
-            {
-                btn_themdh.Visible = false;
             }
         }
 
