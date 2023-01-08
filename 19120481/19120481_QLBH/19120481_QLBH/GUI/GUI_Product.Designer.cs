@@ -31,12 +31,10 @@ namespace _19120481_QLBH.GUI
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button_LuuSP = new System.Windows.Forms.Button();
             this.button_QT_CapNhatSP = new System.Windows.Forms.Button();
             this.button_QT_XoaSP = new System.Windows.Forms.Button();
             this.button_ThemSP = new System.Windows.Forms.Button();
             this.textBox_HinhAnh = new System.Windows.Forms.TextBox();
-            this.picBox_QT_SP_Anh = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox_QT_SP_MoTa = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,18 +50,18 @@ namespace _19120481_QLBH.GUI
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_themdh = new System.Windows.Forms.Button();
             this.textBox_tensp_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_themdh = new System.Windows.Forms.Button();
+            this.picBox_QT_SP_Anh = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_QT_SP_Anh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_QT_SP)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_QT_SP_Anh)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button_LuuSP);
             this.panel2.Controls.Add(this.button_QT_CapNhatSP);
             this.panel2.Controls.Add(this.button_QT_XoaSP);
             this.panel2.Controls.Add(this.button_ThemSP);
@@ -73,45 +71,38 @@ namespace _19120481_QLBH.GUI
             this.panel2.Size = new System.Drawing.Size(1282, 92);
             this.panel2.TabIndex = 9;
             // 
-            // button_LuuSP
-            // 
-            this.button_LuuSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_LuuSP.Location = new System.Drawing.Point(399, 28);
-            this.button_LuuSP.Name = "button_LuuSP";
-            this.button_LuuSP.Size = new System.Drawing.Size(188, 45);
-            this.button_LuuSP.TabIndex = 55;
-            this.button_LuuSP.Text = "Lưu";
-            this.button_LuuSP.UseVisualStyleBackColor = true;
-            // 
             // button_QT_CapNhatSP
             // 
             this.button_QT_CapNhatSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_QT_CapNhatSP.Location = new System.Drawing.Point(993, 28);
+            this.button_QT_CapNhatSP.Location = new System.Drawing.Point(931, 28);
             this.button_QT_CapNhatSP.Name = "button_QT_CapNhatSP";
             this.button_QT_CapNhatSP.Size = new System.Drawing.Size(188, 45);
             this.button_QT_CapNhatSP.TabIndex = 54;
             this.button_QT_CapNhatSP.Text = "Cập nhật";
             this.button_QT_CapNhatSP.UseVisualStyleBackColor = true;
+            this.button_QT_CapNhatSP.Click += new System.EventHandler(this.button_QT_CapNhatSP_Click);
             // 
             // button_QT_XoaSP
             // 
             this.button_QT_XoaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_QT_XoaSP.Location = new System.Drawing.Point(696, 28);
+            this.button_QT_XoaSP.Location = new System.Drawing.Point(543, 28);
             this.button_QT_XoaSP.Name = "button_QT_XoaSP";
             this.button_QT_XoaSP.Size = new System.Drawing.Size(188, 45);
             this.button_QT_XoaSP.TabIndex = 53;
             this.button_QT_XoaSP.Text = "Xóa";
             this.button_QT_XoaSP.UseVisualStyleBackColor = true;
+            this.button_QT_XoaSP.Click += new System.EventHandler(this.button_QT_XoaSP_Click);
             // 
             // button_ThemSP
             // 
             this.button_ThemSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_ThemSP.Location = new System.Drawing.Point(101, 28);
+            this.button_ThemSP.Location = new System.Drawing.Point(152, 28);
             this.button_ThemSP.Name = "button_ThemSP";
             this.button_ThemSP.Size = new System.Drawing.Size(188, 45);
             this.button_ThemSP.TabIndex = 52;
             this.button_ThemSP.Text = "Thêm";
             this.button_ThemSP.UseVisualStyleBackColor = true;
+            this.button_ThemSP.Click += new System.EventHandler(this.button_ThemSP_Click);
             // 
             // textBox_HinhAnh
             // 
@@ -121,16 +112,6 @@ namespace _19120481_QLBH.GUI
             this.textBox_HinhAnh.Name = "textBox_HinhAnh";
             this.textBox_HinhAnh.Size = new System.Drawing.Size(244, 99);
             this.textBox_HinhAnh.TabIndex = 28;
-            // 
-            // picBox_QT_SP_Anh
-            // 
-            this.picBox_QT_SP_Anh.Image = global::_19120481_QLBH.Properties.Resources.Hoa_hong;
-            this.picBox_QT_SP_Anh.Location = new System.Drawing.Point(956, 12);
-            this.picBox_QT_SP_Anh.Name = "picBox_QT_SP_Anh";
-            this.picBox_QT_SP_Anh.Size = new System.Drawing.Size(296, 293);
-            this.picBox_QT_SP_Anh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBox_QT_SP_Anh.TabIndex = 27;
-            this.picBox_QT_SP_Anh.TabStop = false;
             // 
             // label11
             // 
@@ -226,9 +207,9 @@ namespace _19120481_QLBH.GUI
             this.label5.ForeColor = System.Drawing.Color.MediumBlue;
             this.label5.Location = new System.Drawing.Point(660, 58);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 25);
+            this.label5.Size = new System.Drawing.Size(80, 25);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Giá gốc";
+            this.label5.Text = "Giá bán";
             // 
             // label3
             // 
@@ -295,6 +276,17 @@ namespace _19120481_QLBH.GUI
             this.panel1.Size = new System.Drawing.Size(1282, 355);
             this.panel1.TabIndex = 8;
             // 
+            // btn_themdh
+            // 
+            this.btn_themdh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_themdh.Location = new System.Drawing.Point(501, 282);
+            this.btn_themdh.Name = "btn_themdh";
+            this.btn_themdh.Size = new System.Drawing.Size(208, 57);
+            this.btn_themdh.TabIndex = 99;
+            this.btn_themdh.Text = "Thêm Đơn Hàng";
+            this.btn_themdh.UseVisualStyleBackColor = true;
+            this.btn_themdh.Click += new System.EventHandler(this.btn_themdh_Click);
+            // 
             // textBox_tensp_search
             // 
             this.textBox_tensp_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,16 +308,15 @@ namespace _19120481_QLBH.GUI
             this.label2.TabIndex = 96;
             this.label2.Text = "Tìm tên sản phẩm";
             // 
-            // btn_themdh
+            // picBox_QT_SP_Anh
             // 
-            this.btn_themdh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_themdh.Location = new System.Drawing.Point(501, 282);
-            this.btn_themdh.Name = "btn_themdh";
-            this.btn_themdh.Size = new System.Drawing.Size(208, 57);
-            this.btn_themdh.TabIndex = 99;
-            this.btn_themdh.Text = "Thêm Đơn Hàng";
-            this.btn_themdh.UseVisualStyleBackColor = true;
-            this.btn_themdh.Click += new System.EventHandler(this.btn_themdh_Click);
+            this.picBox_QT_SP_Anh.Image = global::_19120481_QLBH.Properties.Resources.Hoa_hong;
+            this.picBox_QT_SP_Anh.Location = new System.Drawing.Point(956, 12);
+            this.picBox_QT_SP_Anh.Name = "picBox_QT_SP_Anh";
+            this.picBox_QT_SP_Anh.Size = new System.Drawing.Size(296, 293);
+            this.picBox_QT_SP_Anh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBox_QT_SP_Anh.TabIndex = 27;
+            this.picBox_QT_SP_Anh.TabStop = false;
             // 
             // GUI_Product
             // 
@@ -340,10 +331,10 @@ namespace _19120481_QLBH.GUI
             this.Text = "GUI_Product_Admin";
             this.Load += new System.EventHandler(this.GUI_Product_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_QT_SP_Anh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_QT_SP)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_QT_SP_Anh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,7 +342,6 @@ namespace _19120481_QLBH.GUI
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button_LuuSP;
         private System.Windows.Forms.Button button_QT_CapNhatSP;
         private System.Windows.Forms.Button button_QT_XoaSP;
         private System.Windows.Forms.Button button_ThemSP;

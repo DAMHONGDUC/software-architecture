@@ -77,7 +77,6 @@ namespace _19120481_QLBH.GUI
             else
             {
                 button_ThemSP.Visible = false;
-                button_LuuSP.Visible = false;
                 button_QT_XoaSP.Visible = false;
                 button_QT_CapNhatSP.Visible = false;
                 btn_themdh.Enabled = false;
@@ -91,6 +90,9 @@ namespace _19120481_QLBH.GUI
             LoadDataDGV(tbl_SP);
 
             disableOption();
+
+            button_QT_CapNhatSP.Enabled = false;
+            button_QT_XoaSP.Enabled = false;
         }
 
         private void dGV_QT_SP_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -101,14 +103,18 @@ namespace _19120481_QLBH.GUI
                 return;
             }
 
+            button_QT_CapNhatSP.Enabled = true;
             btn_themdh.Enabled = true;
+            button_QT_XoaSP.Enabled = true;
+
             dtoProduct = new DTO_Product(
                 Int32.Parse(dGV_QT_SP.CurrentRow.Cells["ID"].Value.ToString()),
                 dGV_QT_SP.CurrentRow.Cells["NAME"].Value.ToString(),
                 dGV_QT_SP.CurrentRow.Cells["DESCRIPTION"].Value.ToString(),
-                Int32.Parse(dGV_QT_SP.CurrentRow.Cells["QUANTITY"].Value.ToString()),
-                float.Parse(dGV_QT_SP.CurrentRow.Cells["PRICE"].Value.ToString()),
-                dGV_QT_SP.CurrentRow.Cells["IMAGE"].Value.ToString());
+                dGV_QT_SP.CurrentRow.Cells["IMAGE"].Value.ToString(),
+            Int32.Parse(dGV_QT_SP.CurrentRow.Cells["QUANTITY"].Value.ToString()),
+                float.Parse(dGV_QT_SP.CurrentRow.Cells["PRICE"].Value.ToString()));
+                
 
             // set giá trị cho các mục 
             textBox_QT_SP_MASP.Text = dGV_QT_SP.CurrentRow.Cells["ID"].Value.ToString();
@@ -150,6 +156,43 @@ namespace _19120481_QLBH.GUI
             tbl_SP = busProduct.searchByName(name);
 
             LoadDataDGV(tbl_SP);
+        }
+
+        private void button_ThemSP_Click(object sender, EventArgs e)
+        {
+            button_QT_CapNhatSP.Enabled = false;
+            button_QT_XoaSP.Enabled = false;
+
+            GUI_Add_Update_Product gui_Add_Update_Product = new GUI_Add_Update_Product(dtoProduct);
+            gui_Add_Update_Product.Show();
+            gui_Add_Update_Product.FormClosed += new FormClosedEventHandler(Form_Add_Update_Product_Closed);
+        }
+
+        private void button_QT_CapNhatSP_Click(object sender, EventArgs e)
+        {
+            GUI_Add_Update_Product gui_Add_Update_Product = new GUI_Add_Update_Product(dtoProduct, true);
+            gui_Add_Update_Product.Show();
+            gui_Add_Update_Product.FormClosed += new FormClosedEventHandler(Form_Add_Update_Product_Closed);
+        }
+
+        private void button_QT_XoaSP_Click(object sender, EventArgs e)
+        {
+            busProduct.deleteProduct(int.Parse(textBox_QT_SP_MASP.Text));
+
+            MessageBox.Show("Xóa Product thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            tbl_SP = busProduct.getAllProduct();
+
+            LoadDataDGV(tbl_SP);
+            resetValue();
+        }
+
+        void Form_Add_Update_Product_Closed(object sender, FormClosedEventArgs e)
+        {
+            tbl_SP = busProduct.getAllProduct();
+
+            LoadDataDGV(tbl_SP);
+            resetValue();
         }
     }
 }

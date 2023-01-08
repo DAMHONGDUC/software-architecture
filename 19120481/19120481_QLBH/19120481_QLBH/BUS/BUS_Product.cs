@@ -22,5 +22,20 @@ namespace _19120481_QLBH.BUS
         {
             return daoProduct.searchByName(name);
         }
+
+        public int insertProduct(DTO_Product product)
+        {
+            return daoProduct.insertProduct(product);
+        }
+
+        public void updateProduct(DTO_Product product)
+        {
+            daoProduct.updateProduct(product);
+        }
+
+        public void deleteProduct(int id)
+        {
+            daoProduct.deleteProduct(id);
+        }
     }
 }
