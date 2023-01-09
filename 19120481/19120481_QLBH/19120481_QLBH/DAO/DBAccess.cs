@@ -16,8 +16,10 @@ namespace _19120481_QLBH.DAO
         public static SqlConnection Con;
         public static bool Connect()
         {
+            string desktopName = System.Environment.MachineName;
+
             Con = new SqlConnection();
-            Con.ConnectionString = "Data Source=" + DBAccess.server_name + ";Initial Catalog=QLBH;Integrated Security=True";
+            Con.ConnectionString = "Data Source=" + desktopName + @"\SQLEXPRESS" + ";Initial Catalog=QLBH;Integrated Security=True";
             //Mở kết nối
 
             try
